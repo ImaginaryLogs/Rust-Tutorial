@@ -1,0 +1,9 @@
+# This is a configuration file, it contains info about configuring the packages such as dependencies
+[package]
+name = "rust_tutorial"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies] 
+rand = "0.8.5" # place the current version number you want.
+# if you want to know what the version number is for dependencies (called crates - bundles of code), go to crates.io
