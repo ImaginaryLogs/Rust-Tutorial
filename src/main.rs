@@ -2,7 +2,7 @@
 
 use std::{char, i32, io, vec};
 // use std::io::* // if you want to include other libraries under this scope, place a *
-// use rand::Rng;
+use rand::Rng;
 use std::io::{Write, BufReader, BufRead, ErrorKind}; // for files
 use std::fs::File;
 use std::cmp::Ordering; // for match!
@@ -55,8 +55,8 @@ fn example03_max_size(){
     let num_1: f64 = 1.111111111111111;
     println!("f64: {}", num_1 + 0.111111111111111); // only 14 digits of precision
 
-    let random_num: i32 = rand::thread_rng().gen_range(1..101); // includes to 1 and up to 100 (not including 101) 1 <= x < 101
-    print!("Random : {}", random_num); 
+    // let random_num: i32 = rand:; // includes to 1 and up to 100 (not including 101) 1 <= x < 101
+    // print!("Random : {}", random_num); 
 
 }
 
@@ -130,7 +130,7 @@ fn example05_arrays(){
 
 }
 
-fn example6_arrays() {
+fn example06_arrays() {
     let my_tuple: (u8, String, f64) = (47, "Derek".to_string(), 50_000.00);
 
     println!("Name : {}", my_tuple.1);
@@ -138,7 +138,7 @@ fn example6_arrays() {
     println!("Age : {}", v1);
 }
 
-fn example7_string(){
+fn example07_string(){
     let mut st1 = String::new();
     st1.push('A');
     st1.push_str(" word");
@@ -164,8 +164,8 @@ fn example7_string(){
     let st6 = &st5[0..6]; // grabes as slice from 0 to 5, not 6 inclusively
     println!("String length: {}", st6.len());
     st5.clear();
-    let st6 = Stirng::from("Just some");
-    let st7 = Stirng::from(" words");
+    let st6 = String::from("Just some");
+    let st7 = String::from(" words");
     let st8 = st6 + &st7; // the values of st6 does not exist as it is now referenced in st8, but st7 does exist as we referenced those values.
 
     for char in st8.bytes(){
@@ -173,13 +173,13 @@ fn example7_string(){
     } 
 }
 
-fn example8_casting(){
+fn example08_casting(){
     let int_u8: u8 = 5;
     let int2_u8: u8 = 4;
     let int3_u32: u32 = (int_u8 as u32) + (int2_u8 as u32); 
 }
 
-fn example9_enumerations() {
+fn example09_enumerations() {
     enum Day {
         Monday,
         Tuesday,
@@ -258,7 +258,7 @@ fn sum_list(list: &[i32]) -> i32 {
     sum
 }
 
-fn sum_list(x:i32) -> (i32, i32) {
+fn sum_list2(x:i32) -> (i32, i32) {
     return (x+1, x+2);
 }
 
@@ -378,10 +378,10 @@ fn main() {
     example03_max_size();
     example04_data_match();
     example05_arrays();
-    example6_arrays();
-    example7_string();
-    example8_casting();
-    example9_enumerations();
+    example06_arrays();
+    example07_string();
+    example08_casting();
+    example09_enumerations();
     example10_vectors();
     example11_funcs();
     example12_hash_map();
